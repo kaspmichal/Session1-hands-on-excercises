@@ -1,0 +1,30 @@
+source:
+  type: bigquery
+  config:
+    # Coordinates
+    project_id: datamass-mdp-workshop
+
+    env: "DEV"
+
+    # `schema_pattern` for BQ Datasets
+    schema_pattern:
+      allow:
+        - raw_ecommerce_eu    #provided dataset/datasets to consider
+    # table_pattern:
+    #   deny:
+    #     # Define name of the table. In example 
+          # "- .*revenue_table_name" where the exact name
+          # of the table is "revenue_table_name"
+    profiling:
+     enabled: true
+     report_dropped_profiles: True
+     profile_table_level_only: False
+     profile_table_size_limit: null
+     profile_if_updated_since_days: null
+     query_combiner_enabled: False
+     turn_off_expensive_profiling_metrics: True
+
+sink:
+  type: "datahub-rest"
+  config:
+    server: "http://34.118.69.89:8080"

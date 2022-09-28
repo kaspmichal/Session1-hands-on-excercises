@@ -1,0 +1,21 @@
+source:
+  type: bigquery-usage
+  config:
+    # Coordinates
+    projects: 
+      - datamass-mdp-workshop
+
+      env: "DEV"
+
+    # `schema_pattern` for BQ Datasets
+    dataset_pattern:
+      allow:
+        - raw_ecommerce_eu     #define dataset/datasets to consider
+    
+    top_n_queries: 10
+    bucket_duration: DAY
+
+sink:
+  type: "datahub-rest"
+  config:
+    server: "https://gms.dataops-dev.getindata.dev"

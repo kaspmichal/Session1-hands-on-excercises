@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: d469d57
+_src_path: https://gitlab.com/datamass-mdp-workshop/mdp-project-template.git
+dataset: presentation
+gcp_project_id: datamass-mdp-workshop
+pipeline_owner: DataOps Team
+project_description: Project for transforming data
+project_name: Session1HandsOn
+schedule_interval: 0 12 * * *
